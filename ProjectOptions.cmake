@@ -4,7 +4,7 @@ include(CheckCXXCompilerFlag)
 
 include(CheckCXXSourceCompiles)
 
-macro(myproject_supports_sanitizers)
+macro(cx_system_error_supports_sanitizers)
   # Emscripten doesn't support sanitizers
   if(EMSCRIPTEN)
     set(SUPPORTS_UBSAN OFF)
@@ -55,113 +55,113 @@ macro(myproject_supports_sanitizers)
   endif()
 endmacro()
 
-macro(myproject_setup_options)
-  option(myproject_ENABLE_HARDENING "Enable hardening" ON)
-  option(myproject_ENABLE_COVERAGE "Enable coverage reporting" OFF)
+macro(cx_system_error_setup_options)
+  option(cx_system_error_ENABLE_HARDENING "Enable hardening" ON)
+  option(cx_system_error_ENABLE_COVERAGE "Enable coverage reporting" OFF)
   cmake_dependent_option(
-    myproject_ENABLE_GLOBAL_HARDENING
+    cx_system_error_ENABLE_GLOBAL_HARDENING
     "Attempt to push hardening options to built dependencies"
     ON
-    myproject_ENABLE_HARDENING
+    cx_system_error_ENABLE_HARDENING
     OFF)
 
-  myproject_supports_sanitizers()
+  cx_system_error_supports_sanitizers()
 
-  if(NOT PROJECT_IS_TOP_LEVEL OR myproject_PACKAGING_MAINTAINER_MODE)
-    option(myproject_ENABLE_IPO "Enable IPO/LTO" OFF)
-    option(myproject_WARNINGS_AS_ERRORS "Treat Warnings As Errors" OFF)
-    option(myproject_ENABLE_SANITIZER_ADDRESS "Enable address sanitizer" OFF)
-    option(myproject_ENABLE_SANITIZER_LEAK "Enable leak sanitizer" OFF)
-    option(myproject_ENABLE_SANITIZER_UNDEFINED "Enable undefined sanitizer" OFF)
-    option(myproject_ENABLE_SANITIZER_THREAD "Enable thread sanitizer" OFF)
-    option(myproject_ENABLE_SANITIZER_MEMORY "Enable memory sanitizer" OFF)
-    option(myproject_ENABLE_UNITY_BUILD "Enable unity builds" OFF)
-    option(myproject_ENABLE_CLANG_TIDY "Enable clang-tidy" OFF)
-    option(myproject_ENABLE_CPPCHECK "Enable cpp-check analysis" OFF)
-    option(myproject_ENABLE_PCH "Enable precompiled headers" OFF)
-    option(myproject_ENABLE_CACHE "Enable ccache" OFF)
+  if(NOT PROJECT_IS_TOP_LEVEL OR cx_system_error_PACKAGING_MAINTAINER_MODE)
+    option(cx_system_error_ENABLE_IPO "Enable IPO/LTO" OFF)
+    option(cx_system_error_WARNINGS_AS_ERRORS "Treat Warnings As Errors" OFF)
+    option(cx_system_error_ENABLE_SANITIZER_ADDRESS "Enable address sanitizer" OFF)
+    option(cx_system_error_ENABLE_SANITIZER_LEAK "Enable leak sanitizer" OFF)
+    option(cx_system_error_ENABLE_SANITIZER_UNDEFINED "Enable undefined sanitizer" OFF)
+    option(cx_system_error_ENABLE_SANITIZER_THREAD "Enable thread sanitizer" OFF)
+    option(cx_system_error_ENABLE_SANITIZER_MEMORY "Enable memory sanitizer" OFF)
+    option(cx_system_error_ENABLE_UNITY_BUILD "Enable unity builds" OFF)
+    option(cx_system_error_ENABLE_CLANG_TIDY "Enable clang-tidy" OFF)
+    option(cx_system_error_ENABLE_CPPCHECK "Enable cpp-check analysis" OFF)
+    option(cx_system_error_ENABLE_PCH "Enable precompiled headers" OFF)
+    option(cx_system_error_ENABLE_CACHE "Enable ccache" OFF)
   else()
-    option(myproject_ENABLE_IPO "Enable IPO/LTO" ON)
-    option(myproject_WARNINGS_AS_ERRORS "Treat Warnings As Errors" ON)
-    option(myproject_ENABLE_SANITIZER_ADDRESS "Enable address sanitizer" ${SUPPORTS_ASAN})
-    option(myproject_ENABLE_SANITIZER_LEAK "Enable leak sanitizer" OFF)
-    option(myproject_ENABLE_SANITIZER_UNDEFINED "Enable undefined sanitizer" ${SUPPORTS_UBSAN})
-    option(myproject_ENABLE_SANITIZER_THREAD "Enable thread sanitizer" OFF)
-    option(myproject_ENABLE_SANITIZER_MEMORY "Enable memory sanitizer" OFF)
-    option(myproject_ENABLE_UNITY_BUILD "Enable unity builds" OFF)
-    option(myproject_ENABLE_CLANG_TIDY "Enable clang-tidy" ON)
-    option(myproject_ENABLE_CPPCHECK "Enable cpp-check analysis" ON)
-    option(myproject_ENABLE_PCH "Enable precompiled headers" OFF)
-    option(myproject_ENABLE_CACHE "Enable ccache" ON)
+    option(cx_system_error_ENABLE_IPO "Enable IPO/LTO" ON)
+    option(cx_system_error_WARNINGS_AS_ERRORS "Treat Warnings As Errors" ON)
+    option(cx_system_error_ENABLE_SANITIZER_ADDRESS "Enable address sanitizer" ${SUPPORTS_ASAN})
+    option(cx_system_error_ENABLE_SANITIZER_LEAK "Enable leak sanitizer" OFF)
+    option(cx_system_error_ENABLE_SANITIZER_UNDEFINED "Enable undefined sanitizer" ${SUPPORTS_UBSAN})
+    option(cx_system_error_ENABLE_SANITIZER_THREAD "Enable thread sanitizer" OFF)
+    option(cx_system_error_ENABLE_SANITIZER_MEMORY "Enable memory sanitizer" OFF)
+    option(cx_system_error_ENABLE_UNITY_BUILD "Enable unity builds" OFF)
+    option(cx_system_error_ENABLE_CLANG_TIDY "Enable clang-tidy" ON)
+    option(cx_system_error_ENABLE_CPPCHECK "Enable cpp-check analysis" ON)
+    option(cx_system_error_ENABLE_PCH "Enable precompiled headers" OFF)
+    option(cx_system_error_ENABLE_CACHE "Enable ccache" ON)
   endif()
 
   if(NOT PROJECT_IS_TOP_LEVEL)
     mark_as_advanced(
-      myproject_ENABLE_IPO
-      myproject_WARNINGS_AS_ERRORS
-      myproject_ENABLE_SANITIZER_ADDRESS
-      myproject_ENABLE_SANITIZER_LEAK
-      myproject_ENABLE_SANITIZER_UNDEFINED
-      myproject_ENABLE_SANITIZER_THREAD
-      myproject_ENABLE_SANITIZER_MEMORY
-      myproject_ENABLE_UNITY_BUILD
-      myproject_ENABLE_CLANG_TIDY
-      myproject_ENABLE_CPPCHECK
-      myproject_ENABLE_COVERAGE
-      myproject_ENABLE_PCH
-      myproject_ENABLE_CACHE)
+      cx_system_error_ENABLE_IPO
+      cx_system_error_WARNINGS_AS_ERRORS
+      cx_system_error_ENABLE_SANITIZER_ADDRESS
+      cx_system_error_ENABLE_SANITIZER_LEAK
+      cx_system_error_ENABLE_SANITIZER_UNDEFINED
+      cx_system_error_ENABLE_SANITIZER_THREAD
+      cx_system_error_ENABLE_SANITIZER_MEMORY
+      cx_system_error_ENABLE_UNITY_BUILD
+      cx_system_error_ENABLE_CLANG_TIDY
+      cx_system_error_ENABLE_CPPCHECK
+      cx_system_error_ENABLE_COVERAGE
+      cx_system_error_ENABLE_PCH
+      cx_system_error_ENABLE_CACHE)
   endif()
 
-  myproject_check_libfuzzer_support(LIBFUZZER_SUPPORTED)
+  cx_system_error_check_libfuzzer_support(LIBFUZZER_SUPPORTED)
   if(LIBFUZZER_SUPPORTED
-     AND (myproject_ENABLE_SANITIZER_ADDRESS
-          OR myproject_ENABLE_SANITIZER_THREAD
-          OR myproject_ENABLE_SANITIZER_UNDEFINED))
+     AND (cx_system_error_ENABLE_SANITIZER_ADDRESS
+          OR cx_system_error_ENABLE_SANITIZER_THREAD
+          OR cx_system_error_ENABLE_SANITIZER_UNDEFINED))
     set(DEFAULT_FUZZER ON)
   else()
     set(DEFAULT_FUZZER OFF)
   endif()
 
-  option(myproject_BUILD_FUZZ_TESTS "Enable fuzz testing executable" ${DEFAULT_FUZZER})
+  option(cx_system_error_BUILD_FUZZ_TESTS "Enable fuzz testing executable" ${DEFAULT_FUZZER})
 
 endmacro()
 
-macro(myproject_global_options)
-  if(myproject_ENABLE_IPO)
+macro(cx_system_error_global_options)
+  if(cx_system_error_ENABLE_IPO)
     include(cmake/InterproceduralOptimization.cmake)
-    myproject_enable_ipo()
+    cx_system_error_enable_ipo()
   endif()
 
-  myproject_supports_sanitizers()
+  cx_system_error_supports_sanitizers()
 
-  if(myproject_ENABLE_HARDENING AND myproject_ENABLE_GLOBAL_HARDENING)
+  if(cx_system_error_ENABLE_HARDENING AND cx_system_error_ENABLE_GLOBAL_HARDENING)
     include(cmake/Hardening.cmake)
     if(NOT SUPPORTS_UBSAN
-       OR myproject_ENABLE_SANITIZER_UNDEFINED
-       OR myproject_ENABLE_SANITIZER_ADDRESS
-       OR myproject_ENABLE_SANITIZER_THREAD
-       OR myproject_ENABLE_SANITIZER_LEAK)
+       OR cx_system_error_ENABLE_SANITIZER_UNDEFINED
+       OR cx_system_error_ENABLE_SANITIZER_ADDRESS
+       OR cx_system_error_ENABLE_SANITIZER_THREAD
+       OR cx_system_error_ENABLE_SANITIZER_LEAK)
       set(ENABLE_UBSAN_MINIMAL_RUNTIME FALSE)
     else()
       set(ENABLE_UBSAN_MINIMAL_RUNTIME TRUE)
     endif()
-    message("${myproject_ENABLE_HARDENING} ${ENABLE_UBSAN_MINIMAL_RUNTIME} ${myproject_ENABLE_SANITIZER_UNDEFINED}")
-    myproject_enable_hardening(myproject_options ON ${ENABLE_UBSAN_MINIMAL_RUNTIME})
+    message("${cx_system_error_ENABLE_HARDENING} ${ENABLE_UBSAN_MINIMAL_RUNTIME} ${cx_system_error_ENABLE_SANITIZER_UNDEFINED}")
+    cx_system_error_enable_hardening(cx_system_error_options ON ${ENABLE_UBSAN_MINIMAL_RUNTIME})
   endif()
 endmacro()
 
-macro(myproject_local_options)
+macro(cx_system_error_local_options)
   if(PROJECT_IS_TOP_LEVEL)
     include(cmake/StandardProjectSettings.cmake)
   endif()
 
-  add_library(myproject_warnings INTERFACE)
-  add_library(myproject_options INTERFACE)
+  add_library(cx_system_error_warnings INTERFACE)
+  add_library(cx_system_error_options INTERFACE)
 
   include(cmake/CompilerWarnings.cmake)
-  myproject_set_project_warnings(
-    myproject_warnings
-    ${myproject_WARNINGS_AS_ERRORS}
+  cx_system_error_set_project_warnings(
+    cx_system_error_warnings
+    ${cx_system_error_WARNINGS_AS_ERRORS}
     ""
     ""
     ""
@@ -172,66 +172,66 @@ macro(myproject_local_options)
 
   if(NOT EMSCRIPTEN)
     include(cmake/Sanitizers.cmake)
-    myproject_enable_sanitizers(
-      myproject_options
-      ${myproject_ENABLE_SANITIZER_ADDRESS}
-      ${myproject_ENABLE_SANITIZER_LEAK}
-      ${myproject_ENABLE_SANITIZER_UNDEFINED}
-      ${myproject_ENABLE_SANITIZER_THREAD}
-      ${myproject_ENABLE_SANITIZER_MEMORY})
+    cx_system_error_enable_sanitizers(
+      cx_system_error_options
+      ${cx_system_error_ENABLE_SANITIZER_ADDRESS}
+      ${cx_system_error_ENABLE_SANITIZER_LEAK}
+      ${cx_system_error_ENABLE_SANITIZER_UNDEFINED}
+      ${cx_system_error_ENABLE_SANITIZER_THREAD}
+      ${cx_system_error_ENABLE_SANITIZER_MEMORY})
   endif()
 
-  set_target_properties(myproject_options PROPERTIES UNITY_BUILD ${myproject_ENABLE_UNITY_BUILD})
+  set_target_properties(cx_system_error_options PROPERTIES UNITY_BUILD ${cx_system_error_ENABLE_UNITY_BUILD})
 
-  if(myproject_ENABLE_PCH)
+  if(cx_system_error_ENABLE_PCH)
     target_precompile_headers(
-      myproject_options
+      cx_system_error_options
       INTERFACE
       <vector>
       <string>
       <utility>)
   endif()
 
-  if(myproject_ENABLE_CACHE)
+  if(cx_system_error_ENABLE_CACHE)
     include(cmake/Cache.cmake)
-    myproject_enable_cache()
+    cx_system_error_enable_cache()
   endif()
 
   include(cmake/StaticAnalyzers.cmake)
-  if(myproject_ENABLE_CLANG_TIDY)
-    myproject_enable_clang_tidy(myproject_options ${myproject_WARNINGS_AS_ERRORS})
+  if(cx_system_error_ENABLE_CLANG_TIDY)
+    cx_system_error_enable_clang_tidy(cx_system_error_options ${cx_system_error_WARNINGS_AS_ERRORS})
   endif()
 
-  if(myproject_ENABLE_CPPCHECK)
-    myproject_enable_cppcheck(${myproject_WARNINGS_AS_ERRORS} "" # override cppcheck options
+  if(cx_system_error_ENABLE_CPPCHECK)
+    cx_system_error_enable_cppcheck(${cx_system_error_WARNINGS_AS_ERRORS} "" # override cppcheck options
     )
   endif()
 
-  if(myproject_ENABLE_COVERAGE)
+  if(cx_system_error_ENABLE_COVERAGE)
     include(cmake/Tests.cmake)
-    myproject_enable_coverage(myproject_options)
+    cx_system_error_enable_coverage(cx_system_error_options)
   endif()
 
-  if(myproject_WARNINGS_AS_ERRORS)
+  if(cx_system_error_WARNINGS_AS_ERRORS)
     check_cxx_compiler_flag("-Wl,--fatal-warnings" LINKER_FATAL_WARNINGS)
     if(LINKER_FATAL_WARNINGS)
       # This is not working consistently, so disabling for now
-      # target_link_options(myproject_options INTERFACE -Wl,--fatal-warnings)
+      # target_link_options(cx_system_error_options INTERFACE -Wl,--fatal-warnings)
     endif()
   endif()
 
-  if(myproject_ENABLE_HARDENING AND NOT myproject_ENABLE_GLOBAL_HARDENING)
+  if(cx_system_error_ENABLE_HARDENING AND NOT cx_system_error_ENABLE_GLOBAL_HARDENING)
     include(cmake/Hardening.cmake)
     if(NOT SUPPORTS_UBSAN
-       OR myproject_ENABLE_SANITIZER_UNDEFINED
-       OR myproject_ENABLE_SANITIZER_ADDRESS
-       OR myproject_ENABLE_SANITIZER_THREAD
-       OR myproject_ENABLE_SANITIZER_LEAK)
+       OR cx_system_error_ENABLE_SANITIZER_UNDEFINED
+       OR cx_system_error_ENABLE_SANITIZER_ADDRESS
+       OR cx_system_error_ENABLE_SANITIZER_THREAD
+       OR cx_system_error_ENABLE_SANITIZER_LEAK)
       set(ENABLE_UBSAN_MINIMAL_RUNTIME FALSE)
     else()
       set(ENABLE_UBSAN_MINIMAL_RUNTIME TRUE)
     endif()
-    myproject_enable_hardening(myproject_options OFF ${ENABLE_UBSAN_MINIMAL_RUNTIME})
+    cx_system_error_enable_hardening(cx_system_error_options OFF ${ENABLE_UBSAN_MINIMAL_RUNTIME})
   endif()
 
 endmacro()
