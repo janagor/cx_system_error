@@ -102,7 +102,9 @@ if(MSVC)
 endif()
 
 # set the startup project for the "play" button in MSVC
-set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT intro)
+if(TARGET tests)
+  set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT tests)
+endif()
 
 if(CMAKE_SKIP_INSTALL_RULES)
   return()
@@ -110,11 +112,8 @@ endif()
 
 include(cmake/PackageProject.cmake)
 
-# Add other targets that you want installed here, by default we just package the one executable
-# we know we want to ship
 cx_system_error_package_project(
   TARGETS
-  intro
   cx_system_error_lib
   cx_system_error_options
   cx_system_error_warnings

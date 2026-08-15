@@ -1,2 +1,1 @@
 add_subdirectory(cx_system_error)
-add_subdirectory(ftxui_sample)
