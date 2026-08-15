@@ -72,8 +72,6 @@ headers. Default set: fmt, spdlog, Catch2, CLI11, FTXUI, lefticus/tools.
 * `test/tests.cpp` — Catch2 unit tests.
 * `test/constexpr_tests.cpp` — the same checks at compile time, so bugs
   become build errors.
-* `fuzz_test/` — libFuzzer harness, auto-enabled when ASan/TSan/UBSan and
-  libFuzzer are all available.
 
 ## Targets and packaging
 

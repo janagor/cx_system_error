@@ -1,4 +1,3 @@
-include(cmake/LibFuzzer.cmake)
 include(CMakeDependentOption)
 include(CheckCXXCompilerFlag)
 
@@ -111,18 +110,6 @@ macro(cx_system_error_setup_options)
       cx_system_error_ENABLE_PCH
       cx_system_error_ENABLE_CACHE)
   endif()
-
-  cx_system_error_check_libfuzzer_support(LIBFUZZER_SUPPORTED)
-  if(LIBFUZZER_SUPPORTED
-     AND (cx_system_error_ENABLE_SANITIZER_ADDRESS
-          OR cx_system_error_ENABLE_SANITIZER_THREAD
-          OR cx_system_error_ENABLE_SANITIZER_UNDEFINED))
-    set(DEFAULT_FUZZER ON)
-  else()
-    set(DEFAULT_FUZZER OFF)
-  endif()
-
-  option(cx_system_error_BUILD_FUZZ_TESTS "Enable fuzz testing executable" ${DEFAULT_FUZZER})
 
 endmacro()
 
