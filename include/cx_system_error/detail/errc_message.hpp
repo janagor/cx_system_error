@@ -9,322 +9,322 @@ namespace cx::detail {
 [[nodiscard]] constexpr auto ErrcMessage(int error_value) noexcept -> std::string_view
 {
   switch (error_value) {
-    case 0:
-      return "Success";
+  case 0:
+    return "Success";
 #ifdef EAFNOSUPPORT
-    case EAFNOSUPPORT:
-      return "Address family not supported";
+  case EAFNOSUPPORT:
+    return "Address family not supported";
 #endif
 #ifdef EADDRINUSE
-    case EADDRINUSE:
-      return "Address in use";
+  case EADDRINUSE:
+    return "Address in use";
 #endif
 #ifdef EADDRNOTAVAIL
-    case EADDRNOTAVAIL:
-      return "Address not available";
+  case EADDRNOTAVAIL:
+    return "Address not available";
 #endif
 #ifdef EISCONN
-    case EISCONN:
-      return "Already connected";
+  case EISCONN:
+    return "Already connected";
 #endif
 #ifdef E2BIG
-    case E2BIG:
-      return "Argument list too long";
+  case E2BIG:
+    return "Argument list too long";
 #endif
 #ifdef EDOM
-    case EDOM:
-      return "Argument out of domain";
+  case EDOM:
+    return "Argument out of domain";
 #endif
 #ifdef EFAULT
-    case EFAULT:
-      return "Bad address";
+  case EFAULT:
+    return "Bad address";
 #endif
 #ifdef EBADF
-    case EBADF:
-      return "Bad file descriptor";
+  case EBADF:
+    return "Bad file descriptor";
 #endif
 #ifdef EBADMSG
-    case EBADMSG:
-      return "Bad message";
+  case EBADMSG:
+    return "Bad message";
 #endif
 #ifdef EPIPE
-    case EPIPE:
-      return "Broken pipe";
+  case EPIPE:
+    return "Broken pipe";
 #endif
 #ifdef ECONNABORTED
-    case ECONNABORTED:
-      return "Connection aborted";
+  case ECONNABORTED:
+    return "Connection aborted";
 #endif
 #ifdef EALREADY
-    case EALREADY:
-      return "Connection already in progress";
+  case EALREADY:
+    return "Connection already in progress";
 #endif
 #ifdef ECONNREFUSED
-    case ECONNREFUSED:
-      return "Connection refused";
+  case ECONNREFUSED:
+    return "Connection refused";
 #endif
 #ifdef ECONNRESET
-    case ECONNRESET:
-      return "Connection reset";
+  case ECONNRESET:
+    return "Connection reset";
 #endif
 #ifdef EXDEV
-    case EXDEV:
-      return "Cross-device link";
+  case EXDEV:
+    return "Cross-device link";
 #endif
 #ifdef EDESTADDRREQ
-    case EDESTADDRREQ:
-      return "Destination address required";
+  case EDESTADDRREQ:
+    return "Destination address required";
 #endif
 #ifdef EBUSY
-    case EBUSY:
-      return "Device or resource busy";
+  case EBUSY:
+    return "Device or resource busy";
 #endif
 #ifdef ENOTEMPTY
-    case ENOTEMPTY:
-      return "Directory not empty";
+  case ENOTEMPTY:
+    return "Directory not empty";
 #endif
 #ifdef ENOEXEC
-    case ENOEXEC:
-      return "Executable format error";
+  case ENOEXEC:
+    return "Executable format error";
 #endif
 #ifdef EEXIST
-    case EEXIST:
-      return "File exists";
+  case EEXIST:
+    return "File exists";
 #endif
 #ifdef EFBIG
-    case EFBIG:
-      return "File too large";
+  case EFBIG:
+    return "File too large";
 #endif
 #ifdef ENAMETOOLONG
-    case ENAMETOOLONG:
-      return "Filename too long";
+  case ENAMETOOLONG:
+    return "Filename too long";
 #endif
 #ifdef ENOSYS
-    case ENOSYS:
-      return "Function not supported";
+  case ENOSYS:
+    return "Function not supported";
 #endif
 #ifdef EHOSTUNREACH
-    case EHOSTUNREACH:
-      return "Host unreachable";
+  case EHOSTUNREACH:
+    return "Host unreachable";
 #endif
 #ifdef EIDRM
-    case EIDRM:
-      return "Identifier removed";
+  case EIDRM:
+    return "Identifier removed";
 #endif
 #ifdef EILSEQ
-    case EILSEQ:
-      return "Illegal byte sequence";
+  case EILSEQ:
+    return "Illegal byte sequence";
 #endif
 #ifdef ENOTTY
-    case ENOTTY:
-      return "Inappropriate I/O control operation";
+  case ENOTTY:
+    return "Inappropriate I/O control operation";
 #endif
 #ifdef EINTR
-    case EINTR:
-      return "Interrupted";
+  case EINTR:
+    return "Interrupted";
 #endif
 #ifdef EINVAL
-    case EINVAL:
-      return "Invalid argument";
+  case EINVAL:
+    return "Invalid argument";
 #endif
 #ifdef ESPIPE
-    case ESPIPE:
-      return "Invalid seek";
+  case ESPIPE:
+    return "Invalid seek";
 #endif
 #ifdef EIO
-    case EIO:
-      return "I/O error";
+  case EIO:
+    return "I/O error";
 #endif
 #ifdef EISDIR
-    case EISDIR:
-      return "Is a directory";
+  case EISDIR:
+    return "Is a directory";
 #endif
 #ifdef EMSGSIZE
-    case EMSGSIZE:
-      return "Message size";
+  case EMSGSIZE:
+    return "Message size";
 #endif
 #ifdef ENETDOWN
-    case ENETDOWN:
-      return "Network down";
+  case ENETDOWN:
+    return "Network down";
 #endif
 #ifdef ENETRESET
-    case ENETRESET:
-      return "Network reset";
+  case ENETRESET:
+    return "Network reset";
 #endif
 #ifdef ENETUNREACH
-    case ENETUNREACH:
-      return "Network unreachable";
+  case ENETUNREACH:
+    return "Network unreachable";
 #endif
 #ifdef ENOBUFS
-    case ENOBUFS:
-      return "No buffer space";
+  case ENOBUFS:
+    return "No buffer space";
 #endif
 #ifdef ECHILD
-    case ECHILD:
-      return "No child process";
+  case ECHILD:
+    return "No child process";
 #endif
 #ifdef ENOLINK
-    case ENOLINK:
-      return "No link";
+  case ENOLINK:
+    return "No link";
 #endif
 #ifdef ENOLCK
-    case ENOLCK:
-      return "No lock available";
+  case ENOLCK:
+    return "No lock available";
 #endif
 #ifdef ENODATA
-    case ENODATA:
-      return "No message available";
+  case ENODATA:
+    return "No message available";
 #endif
 #ifdef ENOMSG
-    case ENOMSG:
-      return "No message";
+  case ENOMSG:
+    return "No message";
 #endif
 #ifdef ENOPROTOOPT
-    case ENOPROTOOPT:
-      return "No protocol option";
+  case ENOPROTOOPT:
+    return "No protocol option";
 #endif
 #ifdef ENOSPC
-    case ENOSPC:
-      return "No space on device";
+  case ENOSPC:
+    return "No space on device";
 #endif
 #ifdef ENOSR
-    case ENOSR:
-      return "No stream resources";
+  case ENOSR:
+    return "No stream resources";
 #endif
 #ifdef ENXIO
-    case ENXIO:
-      return "No such device or address";
+  case ENXIO:
+    return "No such device or address";
 #endif
 #ifdef ENODEV
-    case ENODEV:
-      return "No such device";
+  case ENODEV:
+    return "No such device";
 #endif
 #ifdef ENOENT
-    case ENOENT:
-      return "No such file or directory";
+  case ENOENT:
+    return "No such file or directory";
 #endif
 #ifdef ESRCH
-    case ESRCH:
-      return "No such process";
+  case ESRCH:
+    return "No such process";
 #endif
 #ifdef ENOTDIR
-    case ENOTDIR:
-      return "Not a directory";
+  case ENOTDIR:
+    return "Not a directory";
 #endif
 #ifdef ENOTSOCK
-    case ENOTSOCK:
-      return "Not a socket";
+  case ENOTSOCK:
+    return "Not a socket";
 #endif
 #ifdef ENOSTR
-    case ENOSTR:
-      return "Not a stream";
+  case ENOSTR:
+    return "Not a stream";
 #endif
 #ifdef ENOTCONN
-    case ENOTCONN:
-      return "Not connected";
+  case ENOTCONN:
+    return "Not connected";
 #endif
 #ifdef ENOMEM
-    case ENOMEM:
-      return "Not enough memory";
+  case ENOMEM:
+    return "Not enough memory";
 #endif
 #if defined(ENOTSUP) && (!defined(EOPNOTSUPP) || ENOTSUP != EOPNOTSUPP)
-    case ENOTSUP:
-      return "Not supported";
+  case ENOTSUP:
+    return "Not supported";
 #endif
 #ifdef ECANCELED
-    case ECANCELED:
-      return "Operation canceled";
+  case ECANCELED:
+    return "Operation canceled";
 #endif
 #ifdef EINPROGRESS
-    case EINPROGRESS:
-      return "Operation in progress";
+  case EINPROGRESS:
+    return "Operation in progress";
 #endif
 #ifdef EPERM
-    case EPERM:
-      return "Operation not permitted";
+  case EPERM:
+    return "Operation not permitted";
 #endif
 #ifdef EOPNOTSUPP
-    case EOPNOTSUPP:
-      return "Operation not supported";
+  case EOPNOTSUPP:
+    return "Operation not supported";
 #endif
 #if defined(EWOULDBLOCK) && (!defined(EAGAIN) || EWOULDBLOCK != EAGAIN)
-    case EWOULDBLOCK:
-      return "Operation would block";
+  case EWOULDBLOCK:
+    return "Operation would block";
 #endif
 #ifdef EOWNERDEAD
-    case EOWNERDEAD:
-      return "Owner dead";
+  case EOWNERDEAD:
+    return "Owner dead";
 #endif
 #ifdef EACCES
-    case EACCES:
-      return "Permission denied";
+  case EACCES:
+    return "Permission denied";
 #endif
 #ifdef EPROTO
-    case EPROTO:
-      return "Protocol error";
+  case EPROTO:
+    return "Protocol error";
 #endif
 #ifdef EPROTONOSUPPORT
-    case EPROTONOSUPPORT:
-      return "Protocol not supported";
+  case EPROTONOSUPPORT:
+    return "Protocol not supported";
 #endif
 #ifdef EROFS
-    case EROFS:
-      return "Read-only file system";
+  case EROFS:
+    return "Read-only file system";
 #endif
 #ifdef EDEADLK
-    case EDEADLK:
-      return "Resource deadlock would occur";
+  case EDEADLK:
+    return "Resource deadlock would occur";
 #endif
 #ifdef EAGAIN
-    case EAGAIN:
-      return "Resource unavailable, try again";
+  case EAGAIN:
+    return "Resource unavailable, try again";
 #endif
 #ifdef ERANGE
-    case ERANGE:
-      return "Result out of range";
+  case ERANGE:
+    return "Result out of range";
 #endif
 #ifdef ENOTRECOVERABLE
-    case ENOTRECOVERABLE:
-      return "State not recoverable";
+  case ENOTRECOVERABLE:
+    return "State not recoverable";
 #endif
 #ifdef ETIME
-    case ETIME:
-      return "Stream timeout";
+  case ETIME:
+    return "Stream timeout";
 #endif
 #ifdef ETXTBSY
-    case ETXTBSY:
-      return "Text file busy";
+  case ETXTBSY:
+    return "Text file busy";
 #endif
 #ifdef ETIMEDOUT
-    case ETIMEDOUT:
-      return "Timed out";
+  case ETIMEDOUT:
+    return "Timed out";
 #endif
 #ifdef ENFILE
-    case ENFILE:
-      return "Too many files open in system";
+  case ENFILE:
+    return "Too many files open in system";
 #endif
 #ifdef EMFILE
-    case EMFILE:
-      return "Too many files open";
+  case EMFILE:
+    return "Too many files open";
 #endif
 #ifdef EMLINK
-    case EMLINK:
-      return "Too many links";
+  case EMLINK:
+    return "Too many links";
 #endif
 #ifdef ELOOP
-    case ELOOP:
-      return "Too many symbolic link levels";
+  case ELOOP:
+    return "Too many symbolic link levels";
 #endif
 #ifdef EOVERFLOW
-    case EOVERFLOW:
-      return "Value too large";
+  case EOVERFLOW:
+    return "Value too large";
 #endif
 #ifdef EPROTOTYPE
-    case EPROTOTYPE:
-      return "Wrong protocol type";
+  case EPROTOTYPE:
+    return "Wrong protocol type";
 #endif
-    default:
-      return "Unknown error";
+  default:
+    return "Unknown error";
   }
 }
 
@@ -332,242 +332,242 @@ namespace cx::detail {
 {
   switch (error_value) {
 #ifdef EAFNOSUPPORT
-    case EAFNOSUPPORT:
+  case EAFNOSUPPORT:
 #endif
 #ifdef EADDRINUSE
-    case EADDRINUSE:
+  case EADDRINUSE:
 #endif
 #ifdef EADDRNOTAVAIL
-    case EADDRNOTAVAIL:
+  case EADDRNOTAVAIL:
 #endif
 #ifdef EISCONN
-    case EISCONN:
+  case EISCONN:
 #endif
 #ifdef E2BIG
-    case E2BIG:
+  case E2BIG:
 #endif
 #ifdef EDOM
-    case EDOM:
+  case EDOM:
 #endif
 #ifdef EFAULT
-    case EFAULT:
+  case EFAULT:
 #endif
 #ifdef EBADF
-    case EBADF:
+  case EBADF:
 #endif
 #ifdef EBADMSG
-    case EBADMSG:
+  case EBADMSG:
 #endif
 #ifdef EPIPE
-    case EPIPE:
+  case EPIPE:
 #endif
 #ifdef ECONNABORTED
-    case ECONNABORTED:
+  case ECONNABORTED:
 #endif
 #ifdef EALREADY
-    case EALREADY:
+  case EALREADY:
 #endif
 #ifdef ECONNREFUSED
-    case ECONNREFUSED:
+  case ECONNREFUSED:
 #endif
 #ifdef ECONNRESET
-    case ECONNRESET:
+  case ECONNRESET:
 #endif
 #ifdef EXDEV
-    case EXDEV:
+  case EXDEV:
 #endif
 #ifdef EDESTADDRREQ
-    case EDESTADDRREQ:
+  case EDESTADDRREQ:
 #endif
 #ifdef EBUSY
-    case EBUSY:
+  case EBUSY:
 #endif
 #ifdef ENOTEMPTY
-    case ENOTEMPTY:
+  case ENOTEMPTY:
 #endif
 #ifdef ENOEXEC
-    case ENOEXEC:
+  case ENOEXEC:
 #endif
 #ifdef EEXIST
-    case EEXIST:
+  case EEXIST:
 #endif
 #ifdef EFBIG
-    case EFBIG:
+  case EFBIG:
 #endif
 #ifdef ENAMETOOLONG
-    case ENAMETOOLONG:
+  case ENAMETOOLONG:
 #endif
 #ifdef ENOSYS
-    case ENOSYS:
+  case ENOSYS:
 #endif
 #ifdef EHOSTUNREACH
-    case EHOSTUNREACH:
+  case EHOSTUNREACH:
 #endif
 #ifdef EIDRM
-    case EIDRM:
+  case EIDRM:
 #endif
 #ifdef EILSEQ
-    case EILSEQ:
+  case EILSEQ:
 #endif
 #ifdef ENOTTY
-    case ENOTTY:
+  case ENOTTY:
 #endif
 #ifdef EINTR
-    case EINTR:
+  case EINTR:
 #endif
 #ifdef EINVAL
-    case EINVAL:
+  case EINVAL:
 #endif
 #ifdef ESPIPE
-    case ESPIPE:
+  case ESPIPE:
 #endif
 #ifdef EIO
-    case EIO:
+  case EIO:
 #endif
 #ifdef EISDIR
-    case EISDIR:
+  case EISDIR:
 #endif
 #ifdef EMSGSIZE
-    case EMSGSIZE:
+  case EMSGSIZE:
 #endif
 #ifdef ENETDOWN
-    case ENETDOWN:
+  case ENETDOWN:
 #endif
 #ifdef ENETRESET
-    case ENETRESET:
+  case ENETRESET:
 #endif
 #ifdef ENETUNREACH
-    case ENETUNREACH:
+  case ENETUNREACH:
 #endif
 #ifdef ENOBUFS
-    case ENOBUFS:
+  case ENOBUFS:
 #endif
 #ifdef ECHILD
-    case ECHILD:
+  case ECHILD:
 #endif
 #ifdef ENOLINK
-    case ENOLINK:
+  case ENOLINK:
 #endif
 #ifdef ENOLCK
-    case ENOLCK:
+  case ENOLCK:
 #endif
 #ifdef ENODATA
-    case ENODATA:
+  case ENODATA:
 #endif
 #ifdef ENOMSG
-    case ENOMSG:
+  case ENOMSG:
 #endif
 #ifdef ENOPROTOOPT
-    case ENOPROTOOPT:
+  case ENOPROTOOPT:
 #endif
 #ifdef ENOSPC
-    case ENOSPC:
+  case ENOSPC:
 #endif
 #ifdef ENOSR
-    case ENOSR:
+  case ENOSR:
 #endif
 #ifdef ENXIO
-    case ENXIO:
+  case ENXIO:
 #endif
 #ifdef ENODEV
-    case ENODEV:
+  case ENODEV:
 #endif
 #ifdef ENOENT
-    case ENOENT:
+  case ENOENT:
 #endif
 #ifdef ESRCH
-    case ESRCH:
+  case ESRCH:
 #endif
 #ifdef ENOTDIR
-    case ENOTDIR:
+  case ENOTDIR:
 #endif
 #ifdef ENOTSOCK
-    case ENOTSOCK:
+  case ENOTSOCK:
 #endif
 #ifdef ENOSTR
-    case ENOSTR:
+  case ENOSTR:
 #endif
 #ifdef ENOTCONN
-    case ENOTCONN:
+  case ENOTCONN:
 #endif
 #ifdef ENOMEM
-    case ENOMEM:
+  case ENOMEM:
 #endif
 #if defined(ENOTSUP) && (!defined(EOPNOTSUPP) || ENOTSUP != EOPNOTSUPP)
-    case ENOTSUP:
+  case ENOTSUP:
 #endif
 #ifdef ECANCELED
-    case ECANCELED:
+  case ECANCELED:
 #endif
 #ifdef EINPROGRESS
-    case EINPROGRESS:
+  case EINPROGRESS:
 #endif
 #ifdef EPERM
-    case EPERM:
+  case EPERM:
 #endif
 #ifdef EOPNOTSUPP
-    case EOPNOTSUPP:
+  case EOPNOTSUPP:
 #endif
 #if defined(EWOULDBLOCK) && (!defined(EAGAIN) || EWOULDBLOCK != EAGAIN)
-    case EWOULDBLOCK:
+  case EWOULDBLOCK:
 #endif
 #ifdef EOWNERDEAD
-    case EOWNERDEAD:
+  case EOWNERDEAD:
 #endif
 #ifdef EACCES
-    case EACCES:
+  case EACCES:
 #endif
 #ifdef EPROTO
-    case EPROTO:
+  case EPROTO:
 #endif
 #ifdef EPROTONOSUPPORT
-    case EPROTONOSUPPORT:
+  case EPROTONOSUPPORT:
 #endif
 #ifdef EROFS
-    case EROFS:
+  case EROFS:
 #endif
 #ifdef EDEADLK
-    case EDEADLK:
+  case EDEADLK:
 #endif
 #ifdef EAGAIN
-    case EAGAIN:
+  case EAGAIN:
 #endif
 #ifdef ERANGE
-    case ERANGE:
+  case ERANGE:
 #endif
 #ifdef ENOTRECOVERABLE
-    case ENOTRECOVERABLE:
+  case ENOTRECOVERABLE:
 #endif
 #ifdef ETIME
-    case ETIME:
+  case ETIME:
 #endif
 #ifdef ETXTBSY
-    case ETXTBSY:
+  case ETXTBSY:
 #endif
 #ifdef ETIMEDOUT
-    case ETIMEDOUT:
+  case ETIMEDOUT:
 #endif
 #ifdef ENFILE
-    case ENFILE:
+  case ENFILE:
 #endif
 #ifdef EMFILE
-    case EMFILE:
+  case EMFILE:
 #endif
 #ifdef EMLINK
-    case EMLINK:
+  case EMLINK:
 #endif
 #ifdef ELOOP
-    case ELOOP:
+  case ELOOP:
 #endif
 #ifdef EOVERFLOW
-    case EOVERFLOW:
+  case EOVERFLOW:
 #endif
 #ifdef EPROTOTYPE
-    case EPROTOTYPE:
+  case EPROTOTYPE:
 #endif
-      return true;
-    default:
-      return false;
+    return true;
+  default:
+    return false;
   }
 }
 

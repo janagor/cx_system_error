@@ -103,8 +103,7 @@ cx_system_error_package_project(
   cx_system_error_options
   cx_system_error_warnings
   PUBLIC_INCLUDES
-  ${PROJECT_SOURCE_DIR}/include
-)
+  ${PROJECT_SOURCE_DIR}/include)
 
 # Experience shows that explicit package naming can help make it easier to sort
 # out potential ABI related issues before they start, while helping you

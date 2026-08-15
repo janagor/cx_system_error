@@ -5,17 +5,17 @@
 
 namespace cx {
 
-template<typename Type>
-struct IsErrorCodeEnum : std::false_type {};
+template<typename Type> struct IsErrorCodeEnum : std::false_type
+{
+};
 
-template<typename Type>
-struct IsErrorConditionEnum : std::false_type {};
+template<typename Type> struct IsErrorConditionEnum : std::false_type
+{
+};
 
-template<typename Type>
-inline constexpr bool kIsErrorCodeEnumV = IsErrorCodeEnum<Type>::value;
+template<typename Type> inline constexpr bool kIsErrorCodeEnumV = IsErrorCodeEnum<Type>::value;
 
-template<typename Type>
-inline constexpr bool kIsErrorConditionEnumV = IsErrorConditionEnum<Type>::value;
+template<typename Type> inline constexpr bool kIsErrorConditionEnumV = IsErrorConditionEnum<Type>::value;
 
 }// namespace cx
 

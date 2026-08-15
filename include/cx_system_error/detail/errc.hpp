@@ -119,8 +119,9 @@ enum class Errc {
   kWrongProtocolType = EPROTOTYPE
 };
 
-template<>
-struct IsErrorConditionEnum<Errc> : std::true_type {};
+template<> struct IsErrorConditionEnum<Errc> : std::true_type
+{
+};
 
 }// namespace cx
 

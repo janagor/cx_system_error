@@ -29,15 +29,10 @@ public:
 
   [[nodiscard]] constexpr virtual auto Equivalent(const ErrorCode &code, int condition) const noexcept -> bool;
 
-  [[nodiscard]] constexpr auto operator==(const ErrorCategory &rhs) const noexcept -> bool
-  {
-    return this == &rhs;
-  }
+  [[nodiscard]] constexpr auto operator==(const ErrorCategory &rhs) const noexcept -> bool { return this == &rhs; }
 
   [[nodiscard]] constexpr auto operator<=>(const ErrorCategory &rhs) const noexcept -> std::strong_ordering
-  {
-    return std::compare_three_way{}(this, &rhs);
-  }
+  { return std::compare_three_way{}(this, &rhs); }
 };
 
 [[nodiscard]] constexpr auto GenericCategory() noexcept -> const ErrorCategory &;

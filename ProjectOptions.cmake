@@ -132,7 +132,9 @@ macro(cx_system_error_global_options)
     else()
       set(ENABLE_UBSAN_MINIMAL_RUNTIME TRUE)
     endif()
-    message("${cx_system_error_ENABLE_HARDENING} ${ENABLE_UBSAN_MINIMAL_RUNTIME} ${cx_system_error_ENABLE_SANITIZER_UNDEFINED}")
+    message(
+      "${cx_system_error_ENABLE_HARDENING} ${ENABLE_UBSAN_MINIMAL_RUNTIME} ${cx_system_error_ENABLE_SANITIZER_UNDEFINED}"
+    )
     cx_system_error_enable_hardening(cx_system_error_options ON ${ENABLE_UBSAN_MINIMAL_RUNTIME})
   endif()
 endmacro()

@@ -19,7 +19,8 @@ function(
       # -fsanitize=leak on macOS, including arm64). On Apple, leak detection
       # is provided by AddressSanitizer with ASAN_OPTIONS=detect_leaks=1.
       if(APPLE)
-        message(WARNING "Leak sanitizer is not supported on Apple platforms; ignoring cx_system_error_ENABLE_SANITIZER_LEAK")
+        message(
+          WARNING "Leak sanitizer is not supported on Apple platforms; ignoring cx_system_error_ENABLE_SANITIZER_LEAK")
       else()
         list(APPEND SANITIZERS "leak")
       endif()

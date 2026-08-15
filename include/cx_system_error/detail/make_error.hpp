@@ -9,14 +9,10 @@
 namespace cx {
 
 [[nodiscard]] constexpr auto MakeErrorCode(Errc error) noexcept -> ErrorCode
-{
-  return ErrorCode{ static_cast<int>(error), GenericCategory() };
-}
+{ return ErrorCode{ static_cast<int>(error), GenericCategory() }; }
 
 [[nodiscard]] constexpr auto MakeErrorCondition(Errc error) noexcept -> ErrorCondition
-{
-  return ErrorCondition{ static_cast<int>(error), GenericCategory() };
-}
+{ return ErrorCondition{ static_cast<int>(error), GenericCategory() }; }
 
 }// namespace cx
 

@@ -12,21 +12,18 @@ namespace cx {
 
 namespace detail {
 
-void MakeErrorCondition() = delete;
+  void MakeErrorCondition() = delete;
 
 }// namespace detail
 
 class ErrorCondition
 {
-  template<typename ErrorConditionEnum>
-  using Check = std::enable_if_t<kIsErrorConditionEnumV<ErrorConditionEnum>>;
+  template<typename ErrorConditionEnum> using Check = std::enable_if_t<kIsErrorConditionEnumV<ErrorConditionEnum>>;
 
 public:
   constexpr ErrorCondition() noexcept : value_(0), category_(&GenericCategory()) {}
 
-  constexpr ErrorCondition(int value, const ErrorCategory &category) noexcept
-    : value_(value), category_(&category)
-  {}
+  constexpr ErrorCondition(int value, const ErrorCategory &category) noexcept : value_(value), category_(&category) {}
 
   // Intentional implicit conversion, same as std::error_condition(ErrorConditionEnum).
   // NOLINTBEGIN(google-explicit-constructor,hicpp-explicit-conversions)
@@ -57,10 +54,7 @@ public:
 
   [[nodiscard]] constexpr auto Category() const noexcept -> const ErrorCategory & { return *category_; }
 
-  [[nodiscard]] constexpr auto Message() const noexcept -> std::string_view
-  {
-    return Category().Message(Value());
-  }
+  [[nodiscard]] constexpr auto Message() const noexcept -> std::string_view { return Category().Message(Value()); }
 
   [[nodiscard]] constexpr explicit operator bool() const noexcept { return value_ != 0; }
 

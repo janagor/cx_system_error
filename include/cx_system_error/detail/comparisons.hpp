@@ -15,19 +15,13 @@ namespace cx {
 }
 
 [[nodiscard]] constexpr auto operator==(const ErrorCode &lhs, const ErrorCode &rhs) noexcept -> bool
-{
-  return lhs.Category() == rhs.Category() && lhs.Value() == rhs.Value();
-}
+{ return lhs.Category() == rhs.Category() && lhs.Value() == rhs.Value(); }
 
 [[nodiscard]] constexpr auto operator==(const ErrorCode &lhs, const ErrorCondition &rhs) noexcept -> bool
-{
-  return lhs.Category().Equivalent(lhs.Value(), rhs) || rhs.Category().Equivalent(lhs, rhs.Value());
-}
+{ return lhs.Category().Equivalent(lhs.Value(), rhs) || rhs.Category().Equivalent(lhs, rhs.Value()); }
 
 [[nodiscard]] constexpr auto operator==(const ErrorCondition &lhs, const ErrorCondition &rhs) noexcept -> bool
-{
-  return lhs.Category() == rhs.Category() && lhs.Value() == rhs.Value();
-}
+{ return lhs.Category() == rhs.Category() && lhs.Value() == rhs.Value(); }
 
 [[nodiscard]] constexpr auto operator<=>(const ErrorCondition &lhs, const ErrorCondition &rhs) noexcept
   -> std::strong_ordering
