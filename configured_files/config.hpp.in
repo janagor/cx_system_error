@@ -1,5 +1,5 @@
-#ifndef cx_system_error_CONFIG_HPP
-#define cx_system_error_CONFIG_HPP
+#ifndef CX_SYSTEM_ERROR_CONFIG_HPP
+#define CX_SYSTEM_ERROR_CONFIG_HPP
 
 // this is a basic example of how a CMake configured file might look
 // in this particular case, we are using it to set the version number of our executable

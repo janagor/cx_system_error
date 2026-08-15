@@ -115,10 +115,11 @@ include(cmake/PackageProject.cmake)
 cx_system_error_package_project(
   TARGETS
   intro
+  cx_system_error_lib
   cx_system_error_options
   cx_system_error_warnings
-  # FIXME: this does not work! CK
-  # PRIVATE_DEPENDENCIES_CONFIGURED project_options project_warnings
+  PUBLIC_INCLUDES
+  ${PROJECT_SOURCE_DIR}/include
 )
 
 # Experience shows that explicit package naming can help make it easier to sort

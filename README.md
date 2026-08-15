@@ -6,6 +6,18 @@
 
 ## About cx_system_error
 
+Constexpr-friendly C++23 analogue of `<system_error>`: `cx::ErrorCode`,
+`cx::ErrorCondition`, `cx::ErrorCategory`, `cx::Errc`, and the generic/system
+categories. `Message()` returns `std::string_view` so it can be used in constant
+evaluation. The `SystemError` exception type is deferred until constexpr
+exceptions are widely available.
+
+```cpp
+#include <cx_system_error/system_error.hpp>
+
+constexpr auto code = cx::MakeErrorCode(cx::Errc::kInvalidArgument);
+static_assert(code.Message() == "Invalid argument");
+```
 
 ## WebAssembly Demo
 

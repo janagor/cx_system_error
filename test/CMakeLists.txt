@@ -48,7 +48,7 @@ target_link_libraries(
   tests
   PRIVATE cx_system_error::cx_system_error_warnings
           cx_system_error::cx_system_error_options
-          cx_system_error::sample_library
+          cx_system_error::cx_system_error
           Catch2::Catch2WithMain)
 
 cx_system_error_configure_linker(tests)
@@ -82,7 +82,7 @@ target_link_libraries(
   constexpr_tests
   PRIVATE cx_system_error::cx_system_error_warnings
           cx_system_error::cx_system_error_options
-          cx_system_error::sample_library
+          cx_system_error::cx_system_error
           Catch2::Catch2WithMain)
 
 cx_system_error_configure_linker(constexpr_tests)
@@ -107,7 +107,7 @@ target_link_libraries(
   relaxed_constexpr_tests
   PRIVATE cx_system_error::cx_system_error_warnings
           cx_system_error::cx_system_error_options
-          cx_system_error::sample_library
+          cx_system_error::cx_system_error
           Catch2::Catch2WithMain)
 target_compile_definitions(relaxed_constexpr_tests PRIVATE -DCATCH_CONFIG_RUNTIME_STATIC_REQUIRE)
 
