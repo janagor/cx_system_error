@@ -10,7 +10,7 @@ namespace cx {
 
 [[nodiscard]] constexpr auto operator<=>(const ErrorCode &lhs, const ErrorCode &rhs) noexcept -> std::strong_ordering
 {
-  if (auto cmp = lhs.Category() <=> rhs.Category(); cmp != 0) { return cmp; }
+  if (auto cmp = lhs.Category() <=> rhs.Category(); cmp != std::strong_ordering::equal) { return cmp; }
   return lhs.Value() <=> rhs.Value();
 }
 
@@ -26,7 +26,7 @@ namespace cx {
 [[nodiscard]] constexpr auto operator<=>(const ErrorCondition &lhs, const ErrorCondition &rhs) noexcept
   -> std::strong_ordering
 {
-  if (auto cmp = lhs.Category() <=> rhs.Category(); cmp != 0) { return cmp; }
+  if (auto cmp = lhs.Category() <=> rhs.Category(); cmp != std::strong_ordering::equal) { return cmp; }
   return lhs.Value() <=> rhs.Value();
 }
 
