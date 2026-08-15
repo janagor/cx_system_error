@@ -19,15 +19,6 @@ constexpr auto code = cx::MakeErrorCode(cx::Errc::kInvalidArgument);
 static_assert(code.Message() == "Invalid argument");
 ```
 
-## WebAssembly Demo
-
-Try the live WebAssembly demo:
-- Main: [https://janagor.github.io/cx_system_error/](https://janagor.github.io/cx_system_error/)
-- Develop: [https://janagor.github.io/cx_system_error/develop/](https://janagor.github.io/cx_system_error/develop/)
-
-The `main` branch deploys to the root, `develop` to `/develop/`, and tags to `/tagname/`.
-
-
 ## More Details
 
  * [Dependency Setup](README_dependencies.md)
